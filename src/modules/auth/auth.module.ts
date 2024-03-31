@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { env } from 'src/config/env';
+import { PasswordHasherAdapter } from 'src/adapters/password-hasher';
 
 @Module({
   imports: [
@@ -12,6 +13,6 @@ import { env } from 'src/config/env';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, PasswordHasherAdapter],
 })
 export class AuthModule {}
