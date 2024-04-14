@@ -7,6 +7,6 @@ export class UsersService {
   constructor(private readonly usersRepository: PrismaUsersRepository) {}
 
   getUserById(userId: string) {
-    return { userId };
+    return this.usersRepository.findById(userId);
   }
 }
