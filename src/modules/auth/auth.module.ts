@@ -8,6 +8,7 @@ import { PasswordHasherAdapter } from 'src/adapters/password-hasher';
 @Module({
   imports: [
     JwtModule.register({
+      global: true,
       signOptions: { expiresIn: '1d' },
       secret: env.jwtSecret,
     }),
