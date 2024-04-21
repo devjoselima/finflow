@@ -9,6 +9,6 @@ export class UsersController {
   @Get('/me')
   @UseGuards(AuthGuard)
   me(@Req() request: any) {
-    return this.usersService.getUserById('userId');
+    return this.usersService.getUserById(request.userId);
   }
 }

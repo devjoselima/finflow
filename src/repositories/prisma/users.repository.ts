@@ -46,6 +46,10 @@ export class PrismaUsersRepository implements IUsersRepository {
   findById(id: string) {
     return this.prismaService.user.findUnique({
       where: { id },
+      select: {
+        name: true,
+        email: true,
+      },
     });
   }
 }
